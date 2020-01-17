@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="jsonToHTML.js" /></script> 
+    <script src="data-user.js" /></script>
+ 
+    <style>
+    .demo {
+    font-size: 150%;
+    color: red;
+    }
+    </style>
+</head>
+<body>
+
+    <script>
+        //var users = '[{"first_name": "Johnny", "last_name": "Doh", "phone": "12345"}, {"first_name": "Youmi", "last_name": "youp", "phone": "6789"}]';
+
+        $(document).ready(function(){
+          appendToHTMLBlock(users, 'data-user')
+        });
+    </script>
+
+    <!--
+    <div>
+    <button onclick="appendToHTMLBlock(users, 'data-user')">SHOW</button>
+    </div>
+    --> 
+
+    <div data-user>
+    <p class="demo" data-first_name>haa</p>
+    <p data-last_name>1</p>
+    <p data-phone>2</p>
+    </div>
+    <div data-user>
+    <p class="demo" data-first_name>hooo</p>
+    <p data-last_name>3</p>
+    <p data-phone>4</p>
+    </div> 
+
+
+
+    <div id='here'></div> 
+ 
+
+</body>
+</html>
+
+
+
