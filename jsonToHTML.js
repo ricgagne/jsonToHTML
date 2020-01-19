@@ -27,6 +27,29 @@ function importToHTMLBlock(jsonStr, block) {
   $('[' + block + ']').first().remove();
  } // importToHTMLBlock
 
+function appendToUL(jsonStr, li, data_tag) {
+  var jsonArray = JSON.parse(jsonStr);
+  console.log(jsonArray);
+  $.each(jsonArray, function(index, value){
+    // Create a new li to append
+    var new_li = $('[' + li + ']').last().clone();
+    $( new_li ).find('[' + data_tag + ']').text(value);
+    new_li.insertAfter($('[' + li + ']').last());
+  }); // each value
+} // importToli
+
+function importToUL(jsonStr, li, data_tag) {
+  var jsonArray = JSON.parse(jsonStr);
+  console.log(jsonArray);
+  $.each(jsonArray, function(index, value){
+    // Create a new li to append
+    var new_li = $('[' + li + ']').last().clone();
+    $( new_li ).find('[' + data_tag + ']').text(value);
+    new_li.insertAfter($('[' + li + ']').last());
+  }); // each value
+  $('[' + li + ']').first().remove();
+} // importToli
+
 function appendToHTMLBlockBykeys() { }
 function importToHTMLBlockBykeys() { }
 

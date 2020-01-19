@@ -4,6 +4,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="jsonToHTML.js" /></script> 
     <script src="data-user.js" /></script>
+    <script src="data-car.js" /></script>
  
     <style>
     .demo {
@@ -13,36 +14,45 @@
     </style>
 </head>
 <body>
-
     <script>
-        //var users = '[{"first_name": "Johnny", "last_name": "Doh", "phone": "12345"}, {"first_name": "Youmi", "last_name": "youp", "phone": "6789"}]';
-
         $(document).ready(function(){
-          importToHTMLBlock(users, 'data-user')
+          importToHTMLBlock(users, 'data-userForImport');
+          appendToHTMLBlock(users, 'data-userForAppend');
+
+          importToUL(cars, 'data-carForImport', 'data-brand');
+          appendToUL(cars, 'data-carForAppend', 'data-brand');
+
+
         });
     </script>
+<div style="margin: auto; width: 60%;">
+    <h1>Use case of jsonToHTML librairy</h1>
 
-    <!--
-    <div>
-    <button onclick="appendToHTMLBlock(users, 'data-user')">SHOW</button>
+    <h2>import to DIV block (the inital value is for templating purpose only!)</h2>
+    <div data-userForImport>
+      <p class="demo"><lable>First name: </lable><span data-first_name>Henry</span></p>
+      <p><lable>Last name: </lable><span data-last_name>The king</span></p>
+      <p><lable>Phone: </lable><span data-phone>Unvailable</span></p>
     </div>
-    --> 
 
-    <div data-user>
-    <p class="demo" data-first_name>haaouiii</p>
-    <p data-last_name>1</p>
-    <p data-phone>2</p>
-    </div>
-    <div data-user>
-    <p class="demo" data-first_name>hoooyaa</p>
-    <p data-last_name>3</p>
-    <p data-phone>4</p>
-    </div> 
+    <h2>append to DIV block (the inital value are both for templating and real one!)</h2>
+    <div data-userForAppend>
+      <p class="demo"><lable>First name: </lable><span data-first_name>Henry</span></p>
+      <p><lable>Last name: </lable><span data-last_name>The king</span></p>
+      <p><lable>Phone: </lable><span data-phone>Unvailable</span></p>
+    </div>   
 
+    <h2>import to UL block</h2>
+    <ul>
+      <li data-carForImport><span data-brand>lemon car</span></li>      
+    </ul>
 
+    <h2>append to UL block</h2>
+    <ul>
+      <li data-carForAppend><span data-brand>lemon car</span></li>      
+    </ul>
 
-    <div id='here'></div> 
- 
+</div>
 
 </body>
 </html>
