@@ -22,7 +22,11 @@
           importToUL(cars, 'data-carForImport', 'data-brand');
           appendToUL(cars, 'data-carForAppend', 'data-brand');
 
+          // import and append to html table
+          importToHTMLBlock(users, 'data-trForImport');
+          appendToHTMLBlock(users, 'data-trForAppend');
 
+          
         });
     </script>
 <div style="margin: auto; width: 60%;">
@@ -51,6 +55,39 @@
     <ul>
       <li data-carForAppend><span data-brand>lemon car</span></li>      
     </ul>
+
+    <h2>append to data table</h2>
+    <table border="1">
+      <tr> 
+        <th>First name</th> 
+        <th>Last name</th>
+        <th>Phone</th> 
+      </tr>
+      <tr data-trForAppend> 
+        <td data-first_name>Roger</td> 
+        <td data-last_name>Moquin</td> 
+        <td data-phone>345-1233</td>
+      </tr>
+      <tr> 
+        <td>Roger2</td> 
+        <td>Moquin2</td> 
+        <td>345-12883</td>
+      </tr>
+    </table>
+
+    <h2>import to data table</h2>
+    <table border="1">
+      <tr> 
+        <th>First name</th> 
+        <th>Last name</th>
+        <th>Phone</th> 
+      </tr>
+      <tr data-trForImport> 
+        <td data-first_name>Roger</td> 
+        <td data-last_name>Moquin</td> 
+        <td data-phone>345-1233</td>
+      </tr>
+    </table>
 
 </div>
 
